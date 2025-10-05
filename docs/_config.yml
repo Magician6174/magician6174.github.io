@@ -1,0 +1,144 @@
+# ===================================
+# SITE SETTINGS
+# ===================================
+
+title: Himanshu Sharma | Robotics · AI
+email: himanshumagician@gmail.com
+description: >-
+  Exploring the intersection of robotics, computer vision, and machine learning — building intelligent systems that perceive, learn, and interact with the world.
+baseurl: ""
+url: "https://magician6174.github.io"
+
+# ===================================
+# THEME - Minimal Mistakes
+# ===================================
+
+# For GitHub Pages (use remote_theme)
+# remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+
+# For local development (comment out remote_theme above and uncomment below)
+theme: minimal-mistakes-jekyll
+
+# Minimal Mistakes skin (options: default, air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise)
+minimal_mistakes_skin: "dirt"
+enable_copy_code_button: true
+
+# ===================================
+# SITE AUTHOR
+# ===================================
+
+author:
+  name: "Himanshu Sharma"
+  avatar: "/assets/images/big_hero_6.jpg"
+  bio: "Interested in intelligent control, perception, and learning for real-world robots."
+  location: "Bengaluru, India"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:himanshumagician@gmail.com"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://magician6174.github.io"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/magician6174"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/himanshu-sharma-39689b205"
+
+# ===================================
+# SITE FOOTER
+# ===================================
+
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/magician6174"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/himanshu-sharma-39689b205"
+  # since: 2025
+
+# ===================================
+# READING FILES
+# ===================================
+
+include:
+  - _pages
+
+# ===================================
+# PLUGINS
+# ===================================
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-include-cache
+  - jekyll-remote-theme
+
+# ===================================
+# COLLECTIONS & DEFAULTS
+# ===================================
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+  blogs:
+    output: true
+    permalink: /blog/:path/
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: false
+      share: true
+
+# ===================================
+# PAGINATION
+# ===================================
+
+paginate: 3
+paginate_path: /blog/page:num/
+# Pagination works on index.html or files with layout: home
+
+# ===================================
+# BUILD SETTINGS
+# ===================================
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - GUIDE.md
+  - README.md
+  - projects/README.md
+  - projects/_template.md
