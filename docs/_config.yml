@@ -14,10 +14,10 @@ url: "https://magician6174.github.io"
 # ===================================
 
 # For GitHub Pages (use remote_theme)
-# remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
 # For local development (comment out remote_theme above and uncomment below)
-theme: minimal-mistakes-jekyll
+# theme: minimal-mistakes-jekyll
 
 # Minimal Mistakes skin (options: default, air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise)
 minimal_mistakes_skin: "dirt"
