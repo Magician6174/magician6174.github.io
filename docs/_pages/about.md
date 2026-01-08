@@ -39,7 +39,7 @@ Worked on robotic manipulation and vision-based control
 **Applied Scientist I — Amazon Ads (Jan 2024 – Present)**  
 
 I work on large-scale AI systems for content understanding and automation.  
-My focus is on building and deploying **multimodal models** that combine text and image understanding to improve content moderation efficiency across global marketplaces.  
+My focus is on building and deploying **deep learning models** that combine text, image and videos to improve content moderation efficiency across global marketplaces.  
 
 I also explore **active learning**, **representation learning**, and **model reliability** — developing approaches that make large models more data-efficient and trustworthy.  
 
