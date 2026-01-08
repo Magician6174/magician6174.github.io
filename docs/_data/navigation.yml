@@ -6,3 +6,5 @@ main:
     url: /projects/
   - title: "Blog"
     url: /blog/
+  - title: "Learning, Courses and Certificates"
+    url: /learnings/
