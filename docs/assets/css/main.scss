@@ -1,0 +1,373 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+/* --- Type tokens ---------------------------------------------------------
+   Declared ahead of both imports. Every font variable in the theme carries a
+   `!default` flag, so whatever is set first wins; leaving these to the theme
+   yields the system UI stack for body, headings and navigation alike, which is
+   the single biggest reason a stock Minimal Mistakes site reads as generic.
+
+   Pairing rationale: a geometric sans for headings and interface chrome
+   against a text serif for body copy. The write-ups are long-form technical
+   prose with inline code and result tables, which is exactly the workload a
+   text serif is cut for, while the sans keeps headings and nav feeling
+   engineered rather than bookish. Webfonts are requested in
+   `_includes/head/custom.html`. */
+
+$sans-serif: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  "Helvetica Neue", Arial, sans-serif;
+$serif: "Source Serif 4", Georgia, Cambria, "Times New Roman", serif;
+$monospace: "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono",
+  monospace;
+
+$global-font-family: $serif;
+$header-font-family: $sans-serif;
+$caption-font-family: $sans-serif;
+
+@import "minimal-mistakes/skins/oxide";
+@import "minimal-mistakes";
+
+/* --- Vertical rhythm -----------------------------------------------------
+   The theme scales the root from 16px up to 22px at the widest breakpoint. That
+   is tuned for its default sans; at 22px a text serif turns into large-print,
+   and the measure grows past a comfortable line length. Pull the top end in and
+   let the width of the column do the work instead. */
+
+html {
+  font-size: 16px;
+
+  @include breakpoint($medium) {
+    font-size: 17px;
+  }
+
+  @include breakpoint($large) {
+    font-size: 18px;
+  }
+
+  @include breakpoint($x-large) {
+    font-size: 19px;
+  }
+}
+
+/* --- Headings ------------------------------------------------------------
+   Space Grotesk is geometric and wide, so it needs slightly negative tracking
+   and a tighter leading than the theme's defaults to stop headings from
+   sprawling. Section headings also get a hairline rule: with five to eight
+   sections in a write-up, the scale change alone is not a strong enough signal
+   while scrolling. */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.018em;
+  line-height: 1.22;
+}
+
+.page__content {
+  h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid $border-color;
+    font-size: $type-size-3;
+  }
+
+  h3 {
+    font-size: $type-size-4;
+  }
+
+  /* Bolded run-in terms carry a lot of the structure in these write-ups
+     ("**Symptom.**", "**The fix.**"), so they are set in the heading face to
+     separate them from ordinary emphasis in the body serif. */
+  p > strong:first-child {
+    font-family: $sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* --- Body copy -----------------------------------------------------------
+   A capped measure is the point of the whole exercise: unconstrained, the
+   full-width project pages run to well over 100 characters per line, which is
+   roughly double what is comfortable to read. */
+
+.page__content {
+  p, li {
+    line-height: 1.72;
+  }
+
+  > p, > ul, > ol, > blockquote {
+    max-width: 68ch;
+  }
+}
+
+/* Inline code sits inside serif prose, so it needs to be optically smaller
+   than the surrounding text or the mono face dominates the line. */
+code.highlighter-rouge,
+p code, li code, td code {
+  padding: 0.12em 0.34em;
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  font-size: 0.86em;
+}
+
+/* ==========================================================================
+   CUSTOMISATIONS
+   ========================================================================== */
+
+/* --- Full-bleed pages ----------------------------------------------------
+   Minimal Mistakes' built-in `wide` class only zeroes the right-hand padding
+   reserved for the table of contents; `.page` keeps `width: calc(100% - 300px)`
+   because the theme assumes the author-profile sidebar fills that left column.
+   On a page that opts out of the sidebar (`author_profile: false`) those 300px
+   are simply dead space, so pages tagged `portfolio` reclaim them. */
+
+.portfolio {
+  .page {
+    @include breakpoint($large) {
+      width: 100%;
+      padding-right: 0;
+    }
+    @include breakpoint($x-large) {
+      width: 100%;
+      padding-right: 0;
+    }
+  }
+}
+
+/* --- Project card grid ---------------------------------------------------
+   The theme's grid is float-based via Susy and lands on four columns at large
+   widths, which is far too narrow for text-led cards — titles break to one word
+   per line. Replace it with flexbox at two/three columns and equal-height
+   cards. Selectors use `.grid__wrapper > .grid__item` to match the specificity
+   of the theme's `:nth-child` margin rules; because this file is appended after
+   the theme import, the later rule wins the tie. */
+
+.grid__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+
+.grid__wrapper > .grid__item {
+  float: none;
+  clear: none;
+  width: 100%;
+  margin: 0;
+  display: flex;
+
+  @include breakpoint($medium) {
+    /* Two columns: subtract the single gap between them. */
+    width: calc(50% - 0.75em);
+  }
+
+  @include breakpoint($large) {
+    /* Three columns: subtract the two gaps, shared across three items. */
+    width: calc(33.333% - 1em);
+  }
+}
+
+.grid__item .archive__item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.35em;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  background-color: mix($background-color, $text-color, 96%);
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    border-color 0.15s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: $link-color;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.grid__item {
+  .archive__item-title {
+    margin-top: 0;
+    margin-bottom: 0.6em;
+    font-size: 1.05em;
+    line-height: 1.35;
+
+    a {
+      /* The whole card signals interactivity on hover; underlining every
+         title as well is visual noise. */
+      text-decoration: none;
+    }
+  }
+
+  .archive__item-excerpt {
+    /* Push the tag pills to the bottom so cards align regardless of length. */
+    flex-grow: 1;
+    margin-bottom: 0;
+    font-size: 0.82em;
+    line-height: 1.65;
+    opacity: 0.87;
+  }
+
+  .archive__item-teaser {
+    margin-bottom: 0.9em;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+}
+
+/* Tag pills: signal the stack at a glance without competing with the title. */
+
+.project-card__tags {
+  margin: 1em 0 0 !important;
+  font-size: 0.68em;
+  line-height: 1.5;
+}
+
+.project-card__tag {
+  display: inline-block;
+  margin: 0 0.3em 0.4em 0;
+  padding: 0.25em 0.6em;
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  background-color: mix($background-color, $text-color, 92%);
+  color: mix($text-color, $background-color, 72%);
+  font-family: $monospace;
+  letter-spacing: 0.01em;
+}
+
+/* --- Tables --------------------------------------------------------------
+   Several write-ups report measured results in tables, so they need to be
+   properly readable rather than merely present. */
+
+table {
+  font-size: 0.82em;
+
+  th {
+    background-color: mix($background-color, $text-color, 88%);
+  }
+
+  td,
+  th {
+    padding: 0.55em 0.8em;
+    vertical-align: top;
+  }
+}
+
+/* --- Prose -------------------------------------------------------------- */
+
+.page__content {
+  h2 {
+    margin-top: 2em;
+    padding-bottom: 0.35em;
+    border-bottom: 1px solid $border-color;
+  }
+
+  h3 {
+    margin-top: 1.75em;
+  }
+
+  /* Inline code in body text should be distinguishable from surrounding prose. */
+  p > code,
+  li > code,
+  td > code {
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    background-color: mix($background-color, $text-color, 90%);
+    font-size: 0.88em;
+  }
+
+  blockquote {
+    border-left-color: $link-color;
+  }
+
+  /* Long paths and identifiers must not overflow on narrow screens. */
+  p,
+  li {
+    overflow-wrap: break-word;
+  }
+}
+
+/* --- Footer ------------------------------------------------------------- */
+
+.page__footer {
+  margin-top: 3em;
+}
+
+/* --- Restraining the accent ----------------------------------------------
+   The accent earns its impact by being rare. Two places the theme spends it
+   too freely once a saturated colour is plugged into `$primary-color`. */
+
+/* Card titles are links, so they inherit `$link-color` and the grid ends up
+   with ten saturated headings competing with each other. Let them sit in body
+   colour and reveal the accent on hover, where it actually signals something. */
+.grid__item .archive__item-title a {
+  color: $text-color;
+
+  &:hover {
+    color: $link-color;
+  }
+}
+
+/* The theme fills the table-of-contents header with solid `$primary-color`.
+   Against warm paper that block reads as a warning banner rather than
+   navigation. Swap the fill for a surface tint plus an accent rule. */
+.toc {
+  border: 1px solid $border-color;
+  box-shadow: none;
+
+  .nav__title {
+    border-top: 2px solid $primary-color;
+    background-color: $code-background-color;
+    color: $muted-text-color;
+    font-size: $type-size-7;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .nav__items a {
+    font-family: $sans-serif;
+    font-size: 0.76em;
+  }
+
+  /* The active-section highlight is the one place the accent belongs here. */
+  .nav__items .active {
+    background-color: mix($background-color, $primary-color, 88%);
+    box-shadow: inset 2px 0 0 $primary-color;
+    color: $text-color;
+  }
+}
+
+/* Masthead: a hairline rule instead of the theme's shadow, and the site title
+   in the heading face at a weight that holds against the nav links. */
+.masthead {
+  border-bottom: 1px solid $border-color;
+
+  .site-title {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .site-nav .visible-links a {
+    font-family: $sans-serif;
+    font-size: 0.82em;
+
+    /* The theme animates a full-width underline on hover; a shorter accent
+       rule under the label is less shouty at this size. */
+    &:before {
+      height: 2px;
+      background: $primary-color;
+    }
+  }
+}
+
+/* Author sidebar: the name is the only thing that needs weight here. */
+.author__name {
+  font-family: $sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.author__bio,
+.author__urls li {
+  font-size: 0.78em;
+}
