@@ -1,0 +1,48 @@
+/* ==========================================================================
+   Ink skin — near-black ground, warm amber accent
+   --------------------------------------------------------------------------
+   The dark counterpart to `oxide`, sharing its type scale and warm accent
+   family so switching skins changes only the palette. Deliberately near-black
+   (#101317) rather than the blue-grey of the stock `dark` skin, which washes
+   out screenshots and reads muddy at large areas.
+   ========================================================================== */
+
+/* Colors */
+$background-color: #101317 !default;
+$text-color: #e6e3de !default;
+$muted-text-color: #9a948b !default;
+$primary-color: #e8833a !default;
+$border-color: #272c33 !default;
+
+$code-background-color: #171b21 !default;
+$code-background-color-dark: #1d222a !default;
+$form-background-color: #171b21 !default;
+$footer-background-color: #0c0f12 !default;
+
+/* On a dark ground the accent is already high-contrast, so links use a
+   lightened tint rather than a deepened one. */
+$link-color: #f0a265 !default;
+$link-color-hover: #f7bd90 !default;
+$link-color-visited: #d0946b !default;
+
+$masthead-link-color: $text-color !default;
+$masthead-link-color-hover: $primary-color !default;
+$navicon-link-color-hover: mix(#fff, $background-color, 12%) !default;
+
+$success-color: #5fae5f !default;
+$warning-color: #d99b2b !default;
+$danger-color: #e2685f !default;
+$info-color: #5aa8c7 !default;
+
+/* Brand-coloured social glyphs are unreadable on a dark ground; inherit the
+   surrounding text colour instead. */
+.author__urls.social-icons i,
+.author__urls.social-icons .svg-inline--fa,
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa {
+  color: inherit;
+}
+
+.ais-search-box .ais-search-box--input {
+  background-color: $form-background-color;
+}

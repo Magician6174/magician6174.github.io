@@ -1,0 +1,9 @@
+<!-- Typeface loading.
+     Space Grotesk (headings/UI) + Source Serif 4 (body) + JetBrains Mono (code).
+     `preconnect` is split across the two Google hosts because the stylesheet and
+     the font binaries are served from different origins; without the second hint
+     the font files pay a fresh connection cost after the CSS resolves.
+     `display=swap` renders fallback text immediately rather than blocking paint. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">

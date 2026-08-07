@@ -1,0 +1,16 @@
+# Jekyll build output and caches
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Local bundler install (see docs/Gemfile — local preview only)
+vendor/
+.bundle/
+
+# Gemfile.lock is intentionally not committed: this Gemfile exists only for
+# local preview, while GitHub Pages builds with its own resolved toolchain.
+Gemfile.lock
+
+# OS cruft
+.DS_Store

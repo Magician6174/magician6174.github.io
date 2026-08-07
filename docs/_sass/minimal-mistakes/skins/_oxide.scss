@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Oxide skin — warm paper, oxide-orange accent
+   --------------------------------------------------------------------------
+   A light editorial palette chosen for long-form technical reading: a warm
+   off-white ground rather than pure #fff (less glare, and it keeps the
+   greyscale of embedded plots and simulator screenshots from looking dirty),
+   near-black warm text, and a single desaturated orange accent.
+
+   Jekyll resolves `_sass` from the site before the remote theme, so this file
+   satisfies `@import "minimal-mistakes/skins/oxide"` without vendoring the
+   theme. Every variable is declared ahead of the theme's own `!default`
+   fallbacks, so these values win.
+   ========================================================================== */
+
+/* Colors */
+$background-color: #fbfaf7 !default;
+$text-color: #23211e !default;
+$muted-text-color: #6e6862 !default;
+$primary-color: #c0451d !default;
+$border-color: #e4dfd6 !default;
+
+$code-background-color: #f4f1ea !default;
+$code-background-color-dark: #e9e4da !default;
+$form-background-color: #f4f1ea !default;
+$footer-background-color: #f4f1ea !default;
+
+/* Links: a shade deeper than the accent, because the accent is tuned for
+   large type and loses contrast at body size. */
+$link-color: #a83c18 !default;
+$link-color-hover: #862f12 !default;
+$link-color-visited: #8a4a34 !default;
+
+$masthead-link-color: $text-color !default;
+$masthead-link-color-hover: $primary-color !default;
+$navicon-link-color-hover: mix(#000, $background-color, 8%) !default;
+
+/* Notice/callout hues pulled toward the warm ground so `.notice--info`
+   does not read as a foreign element on the page. */
+$success-color: #3f7d3f !default;
+$warning-color: #b3730a !default;
+$danger-color: #b3352f !default;
+$info-color: #2f6f8f !default;

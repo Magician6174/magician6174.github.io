@@ -1,0 +1,33 @@
+{% comment %}
+  Project card for the portfolio grid.
+
+  Deliberately not reusing the theme's archive-single.html: that include reads a
+  bare `post` variable (it expects to sit inside a `for post in ...` loop) and
+  truncates excerpts at 160 characters, which cuts these mid-sentence. This
+  version takes an explicit `project` parameter, renders the full excerpt, and
+  adds tag pills. It reuses the theme's archive__* classes so skin styling and
+  the overrides in assets/css/main.scss both still apply.
+
+  Usage: {% include project-card.html project=item %}
+{% endcomment %}
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    {% if include.project.header.teaser %}
+      <div class="archive__item-teaser">
+        <img src="{{ include.project.header.teaser | relative_url }}" alt="{{ include.project.title | escape }}">
+      </div>
+    {% endif %}
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      <a href="{{ include.project.url | relative_url }}" rel="permalink">{{ include.project.title }}</a>
+    </h2>
+    {% if include.project.excerpt %}
+      <p class="archive__item-excerpt" itemprop="description">{{ include.project.excerpt | markdownify | strip_html | strip }}</p>
+    {% endif %}
+    {% if include.project.tags.size > 0 %}
+      <p class="project-card__tags">
+        {% for tag in include.project.tags %}<span class="project-card__tag">{{ tag }}</span>{% endfor %}
+      </p>
+    {% endif %}
+  </article>
+</div>
