@@ -35,4 +35,4 @@ This site is where I write that work down properly, including the parts that did
 
 ### Explore
 
-[All projects →]({{ '/projects/' | relative_url }}) · [Learning & courses →]({{ '/learnings/' | relative_url }}) · [About →]({{ '/about/' | relative_url }})
+[All projects →]({{ '/projects/' | relative_url }}) · [Learning & courses →]({{ '/learnings/' | relative_url }}) · [About →]({{ '/about/' | relative_url }}) · [🤖 Robotics Resume (PDF)]({{ '/assets/Robotics_Resume-12826.pdf' | relative_url }})
