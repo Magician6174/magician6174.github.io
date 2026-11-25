@@ -1,8 +1,6 @@
 main:
   - title: Projects
     url: /projects/
-  - title: CS224R
-    url: /projects/cs224r/
   - title: About
     url: /about/
   - title: Résumé

@@ -1,0 +1,23 @@
+{% assign panda_project = '/projects/panda-teleop-ik/' | relative_url %}
+<figure class="camera-panel">
+  <figcaption class="camera-header">
+    <a href="{{ panda_project }}"><span class="accent-square" aria-hidden="true"></span> Franka Panda</a>
+    <span>MuJoCo simulation</span>
+  </figcaption>
+  <fieldset class="camera-controls">
+    <legend>Camera view</legend>
+    <div class="camera-options">
+      <input type="radio" name="panda-camera" id="camera-overhead" checked>
+      <label for="camera-overhead">Overhead</label>
+      <input type="radio" name="panda-camera" id="camera-front">
+      <label for="camera-front">Front</label>
+      <input type="radio" name="panda-camera" id="camera-wrist">
+      <label for="camera-wrist">Wrist</label>
+    </div>
+    <div class="camera-viewport">
+      <img class="camera-overhead" src="{{ '/assets/images/panda-topdown.webp' | relative_url }}" width="640" height="480" alt="Overhead view of the Franka Panda arm against the simulator floor grid">
+      <img class="camera-front" src="{{ '/assets/images/panda-front.webp' | relative_url }}" width="640" height="480" alt="Front view of the Panda arm with a red object in its workspace">
+      <img class="camera-wrist" src="{{ '/assets/images/panda-wrist.webp' | relative_url }}" width="640" height="480" alt="View from the Panda wrist camera looking down into the robot’s workspace">
+    </div>
+  </fieldset>
+</figure>

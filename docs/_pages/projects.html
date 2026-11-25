@@ -13,18 +13,8 @@ wide: true
   </div>
 </section>
 
-<section class="project-section course-panel" aria-labelledby="cs224r-work">
-  <div class="course-intro">
-    <p class="eyebrow">Stanford CS224R</p>
-    <h2 id="cs224r-work">Deep Reinforcement Learning</h2>
-    <p>Homework projects on imitation, online and offline learning.</p>
-    <a href="{{ '/projects/cs224r/' | relative_url }}">Explore the coursework</a>
-  </div>
-  {% include cs224r-list.html %}
-</section>
-
 <section class="project-section" aria-labelledby="coursework">
-  <div class="section-head"><h2 id="coursework">More coursework</h2></div>
+  <div class="section-head"><h2 id="coursework">Coursework</h2></div>
   {% assign coursework = site.projects | where: "tier", "coursework" | sort: "order" %}
   <div class="cards">
     {% for project in coursework %}{% include project-card.html project=project %}{% endfor %}

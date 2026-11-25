@@ -1,9 +1,0 @@
-<ul class="course-list">
-  {% for homework in site.data.cs224r %}
-    <li>
-      <span class="homework-id">{{ homework.number }}</span>
-      <a href="{{ '/projects/cs224r/' | relative_url }}#{{ homework.id }}">{{ homework.title }}</a>
-      <span class="status{% if homework.status == 'In progress' %} status-active{% endif %}">{{ homework.status }}</span>
-    </li>
-  {% endfor %}
-</ul>

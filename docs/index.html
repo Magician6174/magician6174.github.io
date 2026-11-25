@@ -1,22 +1,21 @@
 ---
 layout: base
 ---
+<div class="hero-band">
 <section class="wrap hero" aria-labelledby="intro-title">
   <div class="hero-copy">
     <p class="eyebrow"><span class="accent-square"></span> Robotics &amp; embodied AI</p>
     <h1 id="intro-title">Himanshu<br>Sharma<span>.</span></h1>
-    <p class="hero-deck">I build and study how robots learn to manipulate objects, from collecting demonstrations to testing policies in simulation.</p>
+    <p class="hero-deck">I build robot learning systems for manipulation, from collecting demonstrations to testing policies in simulation.</p>
     <p class="hero-role">Applied Scientist at Amazon Ads <span aria-hidden="true">/</span> M.Tech (Research), IISc Bengaluru</p>
     <div class="actions">
       <a class="button button-primary" href="{{ '/projects/' | relative_url }}">Explore projects</a>
       <a class="button button-light" href="{{ '/assets/Robotics_Resume-12826.pdf' | relative_url }}">Robotics résumé</a>
     </div>
   </div>
-  <figure class="hero-figure">
-    <img src="{{ '/assets/images/panda-topdown.webp' | relative_url }}" width="640" height="480" alt="Overhead camera view of the simulated Franka Panda arm in MuJoCo">
-    <figcaption><span><span class="accent-square"></span> Franka Panda</span><span>MuJoCo · overhead camera</span></figcaption>
-  </figure>
+  {% include panda-camera.html %}
 </section>
+</div>
 
 <section class="wrap home-section" aria-labelledby="selected-title">
   <div class="section-head">
@@ -28,18 +27,6 @@ layout: base
     {% for project in featured %}
       {% include project-card.html project=project featured=true %}
     {% endfor %}
-  </div>
-</section>
-
-<section class="wrap home-section" aria-labelledby="rl-title">
-  <div class="course-panel">
-    <div class="course-intro">
-      <p class="eyebrow">Coursework</p>
-      <h2 id="rl-title">Deep Reinforcement Learning</h2>
-      <p>Stanford CS224R homework projects on learning from demonstrations, environment interaction, and fixed datasets.</p>
-      <a href="{{ '/projects/cs224r/' | relative_url }}">Explore the coursework</a>
-    </div>
-    {% include cs224r-list.html %}
   </div>
 </section>
 

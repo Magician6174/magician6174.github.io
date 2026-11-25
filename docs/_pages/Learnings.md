@@ -9,10 +9,6 @@ software engineering. Where a programme had substantial projects, I have written
 separately — the links below go to the detailed write-ups on the
 [Projects]({{ '/projects/' | relative_url }}) page.
 
-## Stanford CS224R · Deep Reinforcement Learning
-
-[Explore my CS224R homework projects](/projects/cs224r/) on imitation learning, online RL, and offline RL.
-
 ## Education
 
 **M.Tech (Research)** — Department of Electrical Communication Engineering, **IISc Bengaluru**
@@ -84,3 +80,5 @@ building the simulation, teleoperation and data-collection infrastructure they d
 - [Diffusion Policy from Scratch]({{ '/projects/diffusion-policy-panda/' | relative_url }})
 - [7-DOF Teleoperation, Inverse Kinematics and Contact Physics]({{ '/projects/panda-teleop-ik/' | relative_url }})
 - [QP Differential IK for an Under-Actuated 5-DOF Arm]({{ '/projects/so101-teleop-ik/' | relative_url }})
+
+- [Stanford CS224R homework projects]({{ '/projects/cs224r/' | relative_url }}) on imitation learning, online RL, and offline RL.
