@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
+  {% assign description = page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace %}
+  <meta name="description" content="{{ description | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}">
+  <meta property="og:description" content="{{ description | escape }}">
+  <meta property="og:image" content="{{ '/assets/images/panda-topdown.webp' | absolute_url }}">
+  <meta name="theme-color" content="#f5f7f8">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/css/portfolio.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="{{ '/' | relative_url }}"><span class="brand-mark" aria-hidden="true">HS</span> Himanshu Sharma</a>
+      <nav aria-label="Main navigation">
+        {% for link in site.data.navigation.main %}
+          <a href="{{ link.url | relative_url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </header>
+  <main id="main">{{ content }}</main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div><strong>Himanshu Sharma</strong><p>Bengaluru, India</p></div>
+      <div class="footer-links">
+        <a href="{{ '/learnings/' | relative_url }}">Learning</a>
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+        <a href="mailto:himanshumagician@gmail.com">Email</a>
+        <a href="https://github.com/Magician6174">GitHub</a>
+        <a href="https://www.linkedin.com/in/himanshu-sharma-39689b205">LinkedIn</a>
+        <a href="{{ '/assets/Robotics_Resume-12826.pdf' | relative_url }}">Robotics résumé</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

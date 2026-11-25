@@ -1,15 +1,17 @@
 ---
-layout: single
+layout: page
 title: "Learning, Courses and Certificates"
 permalink: /learnings/
-author_profile: true
-classes: wide
 ---
 
 My formal and self-directed learning across statistics, machine learning, robotics and
 software engineering. Where a programme had substantial projects, I have written those up
 separately — the links below go to the detailed write-ups on the
 [Projects]({{ '/projects/' | relative_url }}) page.
+
+## Stanford CS224R · Deep Reinforcement Learning
+
+[Explore my CS224R homework projects](/projects/cs224r/) on imitation learning, online RL, and offline RL.
 
 ## Education
 

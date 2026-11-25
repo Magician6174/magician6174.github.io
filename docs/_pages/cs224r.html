@@ -1,0 +1,19 @@
+---
+layout: page
+title: CS224R · Deep Reinforcement Learning
+permalink: /projects/cs224r/
+description: A portfolio of my Stanford CS224R homework projects, covering imitation, online, and offline learning.
+wide: true
+---
+<p class="course-source">Assignment topics and background readings are available on the <a href="https://cs224r.stanford.edu/">Stanford CS224R course site</a>.</p>
+<div class="course-details">
+  {% for homework in site.data.cs224r %}
+    <article class="homework" id="{{ homework.id }}">
+      <div class="homework-meta"><span class="homework-id">{{ homework.number }}</span><span class="status{% if homework.status == 'In progress' %} status-active{% endif %}">{{ homework.status }}</span></div>
+      <h2>{{ homework.title }}</h2>
+      <p class="homework-summary">{{ homework.summary }}</p>
+      <p>{{ homework.details }}</p>
+      <p class="homework-question">{{ homework.question }}</p>
+    </article>
+  {% endfor %}
+</div>

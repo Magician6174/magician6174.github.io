@@ -1,0 +1,42 @@
+---
+layout: page
+title: Projects
+permalink: /projects/
+description: Robot learning, manipulation and perception projects, from simulation infrastructure to policy evaluation.
+wide: true
+---
+<section class="project-section" aria-labelledby="robotics-work">
+  <div class="section-head"><h2 id="robotics-work">Research and independent work</h2></div>
+  {% assign flagship = site.projects | where: "tier", "flagship" | sort: "order" %}
+  <div class="cards">
+    {% for project in flagship %}{% include project-card.html project=project %}{% endfor %}
+  </div>
+</section>
+
+<section class="project-section course-panel" aria-labelledby="cs224r-work">
+  <div class="course-intro">
+    <p class="eyebrow">Stanford CS224R</p>
+    <h2 id="cs224r-work">Deep Reinforcement Learning</h2>
+    <p>Homework projects on imitation, online and offline learning.</p>
+    <a href="{{ '/projects/cs224r/' | relative_url }}">Explore the coursework</a>
+  </div>
+  {% include cs224r-list.html %}
+</section>
+
+<section class="project-section" aria-labelledby="coursework">
+  <div class="section-head"><h2 id="coursework">More coursework</h2></div>
+  {% assign coursework = site.projects | where: "tier", "coursework" | sort: "order" %}
+  <div class="cards">
+    {% for project in coursework %}{% include project-card.html project=project %}{% endfor %}
+  </div>
+</section>
+
+<section class="project-section prose" aria-labelledby="experiments">
+  <h2 id="experiments">Smaller experiments</h2>
+  <ul>
+    <li><a href="https://github.com/Magician6174/Naive_EM">Naive EM</a> — expectation maximization and K-means</li>
+    <li><a href="https://github.com/Magician6174/Why_6174">Why 6174</a> — an exploration of Kaprekar’s constant</li>
+    <li><a href="https://github.com/Magician6174/GameOfLife">Game of Life</a> — Conway’s cellular automaton</li>
+    <li><a href="https://github.com/Magician6174/LeetCode">LeetCode</a> — data structures and algorithms practice</li>
+  </ul>
+</section>

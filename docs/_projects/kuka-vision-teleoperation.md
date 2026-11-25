@@ -11,9 +11,15 @@ tags:
   - Research
 # header:
 #   teaser: /assets/images/kuka-teleop.jpg
-toc: true
-toc_sticky: true
+category: "IISc research"
+featured_title: "Vision-based KUKA teleoperation"
+featured_summary: "Real-time control of a KUKA iiwa industrial arm from a single depth camera."
 ---
+
+**On this page**
+
+* Contents
+{:toc}
 
 ## Overview
 

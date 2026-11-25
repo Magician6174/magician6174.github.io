@@ -11,8 +11,12 @@ tags:
   - C++
 # header:
 #   teaser: /assets/images/ros-slam.jpg
-toc: true
 ---
+
+**On this page**
+
+* Contents
+{:toc}
 
 ## Programme
 

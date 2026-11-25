@@ -1,0 +1,55 @@
+---
+layout: base
+---
+<section class="wrap hero" aria-labelledby="intro-title">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="accent-square"></span> Robotics &amp; embodied AI</p>
+    <h1 id="intro-title">Himanshu<br>Sharma<span>.</span></h1>
+    <p class="hero-deck">I build and study how robots learn to manipulate objects, from collecting demonstrations to testing policies in simulation.</p>
+    <p class="hero-role">Applied Scientist at Amazon Ads <span aria-hidden="true">/</span> M.Tech (Research), IISc Bengaluru</p>
+    <div class="actions">
+      <a class="button button-primary" href="{{ '/projects/' | relative_url }}">Explore projects</a>
+      <a class="button button-light" href="{{ '/assets/Robotics_Resume-12826.pdf' | relative_url }}">Robotics résumé</a>
+    </div>
+  </div>
+  <figure class="hero-figure">
+    <img src="{{ '/assets/images/panda-topdown.webp' | relative_url }}" width="640" height="480" alt="Overhead camera view of the simulated Franka Panda arm in MuJoCo">
+    <figcaption><span><span class="accent-square"></span> Franka Panda</span><span>MuJoCo · overhead camera</span></figcaption>
+  </figure>
+</section>
+
+<section class="wrap home-section" aria-labelledby="selected-title">
+  <div class="section-head">
+    <h2 id="selected-title">Selected work</h2>
+    <a href="{{ '/projects/' | relative_url }}">View all projects</a>
+  </div>
+  <div class="cards">
+    {% assign featured = site.projects | where_exp: "project", "project.featured_title" | sort: 'order' %}
+    {% for project in featured %}
+      {% include project-card.html project=project featured=true %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="wrap home-section" aria-labelledby="rl-title">
+  <div class="course-panel">
+    <div class="course-intro">
+      <p class="eyebrow">Coursework</p>
+      <h2 id="rl-title">Deep Reinforcement Learning</h2>
+      <p>Stanford CS224R homework projects on learning from demonstrations, environment interaction, and fixed datasets.</p>
+      <a href="{{ '/projects/cs224r/' | relative_url }}">Explore the coursework</a>
+    </div>
+    {% include cs224r-list.html %}
+  </div>
+</section>
+
+<section class="wrap home-section profile-strip" aria-labelledby="background-title">
+  <div>
+    <h2 id="background-title">Background</h2>
+    <p>At Amazon Ads I build multimodal models for content understanding. At IISc, I studied how to control a KUKA iiwa arm using a single depth camera.</p>
+  </div>
+  <div class="profile-links">
+    <a href="{{ '/about/' | relative_url }}">About me</a>
+    <a href="{{ '/learnings/' | relative_url }}">Courses and education</a>
+  </div>
+</section>

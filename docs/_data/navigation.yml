@@ -1,12 +1,9 @@
-# Main navigation links
 main:
-  - title: "About"
-    url: /about/
-  - title: "Projects"
+  - title: Projects
     url: /projects/
-  - title: "Blog"
-    url: /blog/
-  - title: "Learnings"
-    url: /learnings/
-  - title: "Resume"
+  - title: CS224R
+    url: /projects/cs224r/
+  - title: About
+    url: /about/
+  - title: Résumé
     url: /assets/Robotics_Resume-12826.pdf

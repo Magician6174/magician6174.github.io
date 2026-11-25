@@ -11,8 +11,12 @@ tags:
   - Python
 # header:
 #   teaser: /assets/images/mitx.jpg
-toc: true
 ---
+
+**On this page**
+
+* Contents
+{:toc}
 
 ## Programme
 

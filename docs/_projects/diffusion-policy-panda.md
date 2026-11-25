@@ -12,13 +12,16 @@ tags:
 # Drop a rollout GIF at assets/images/diffusion-rollout.gif and uncomment to add a card thumbnail
 # header:
 #   teaser: /assets/images/diffusion-rollout.gif
-# Code release pending
-# links:
-#   - url: https://github.com/magician6174/panda-diffusion-policy
-#     label: "Source"
-toc: true
-toc_sticky: true
+category: "Robot learning"
+featured_title: "Diffusion Policy"
+featured_summary: "A denoising policy implemented in PyTorch and evaluated against ACT using the same demonstration data."
+repository: https://github.com/Magician6174/DiffusionPolicy
 ---
+
+**On this page**
+
+* Contents
+{:toc}
 
 ## Overview
 

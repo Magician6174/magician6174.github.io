@@ -12,9 +12,13 @@ tags:
 # header:
 #   teaser: /assets/images/so101-teleop.gif
 # Code release pending
-toc: true
-toc_sticky: true
+category: "Simulation & control"
 ---
+
+**On this page**
+
+* Contents
+{:toc}
 
 ## Overview
 

@@ -11,8 +11,12 @@ tags:
   - DDPG
 # header:
 #   teaser: /assets/images/deep-rl.jpg
-toc: true
 ---
+
+**On this page**
+
+* Contents
+{:toc}
 
 ## Programme
 

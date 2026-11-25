@@ -11,10 +11,16 @@ tags:
   - OpenGL
 # header:
 #   teaser: /assets/images/panda-teleop.gif
-# Code release pending
-toc: true
-toc_sticky: true
+category: "Simulation & control"
+featured_title: "Franka Panda teleoperation"
+featured_summary: "Gamepad control, inverse kinematics and the MuJoCo contact tuning that made simulated grasps hold."
+repository: https://github.com/Magician6174/PandaTeleop
 ---
+
+**On this page**
+
+* Contents
+{:toc}
 
 ## Overview
 
@@ -26,6 +32,14 @@ grasp has to actually hold — both of which turned out to be real engineering p
 
 Built on MuJoCo with a Franka Emika Panda (7 position-servo joints plus a tendon-driven
 gripper).
+
+<figure class="camera-pair">
+  <div>
+    <img src="/assets/images/panda-front.webp" alt="Franka Panda and a red block viewed from the front camera" width="640" height="480" loading="lazy">
+    <img src="/assets/images/panda-wrist.webp" alt="The simulated floor and object viewed from the wrist camera" width="640" height="480" loading="lazy">
+  </div>
+  <figcaption>Front and wrist camera views from the PandaTeleop simulator.</figcaption>
+</figure>
 
 ## Inverse kinematics
 

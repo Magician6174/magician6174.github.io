@@ -11,8 +11,12 @@ tags:
   - Radar
 # header:
 #   teaser: /assets/images/sensor-fusion.jpg
-toc: true
 ---
+
+**On this page**
+
+* Contents
+{:toc}
 
 ## Programme
 

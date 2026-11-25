@@ -1,0 +1,21 @@
+- id: hw1
+  number: HW1
+  title: Imitation learning
+  status: Completed
+  summary: Learn a policy from expert demonstrations and evaluate its behavior when it controls the agent itself.
+  details: Behavior cloning fits the actions in a demonstration dataset. DAgger adds expert labels for states reached by the learner, addressing the distribution shift that occurs when its mistakes take it away from the demonstrated trajectories.
+  question: How does collecting labels on the learner’s own rollouts change the states it learns to handle?
+- id: hw2
+  number: HW2
+  title: Online reinforcement learning
+  status: Completed
+  summary: Train a policy through interaction on a simulated robotic tool-use task with a sparse success reward.
+  details: The Sawyer arm must pick up a tool and use it to hammer a nail. The actor learns which actions to take while the critic estimates how much return those actions are likely to produce.
+  question: What makes it difficult to learn multi-step tool use when the reward arrives only after the task succeeds?
+- id: hw3
+  number: HW3
+  title: Offline reinforcement learning
+  status: In progress
+  summary: Train a policy from a fixed dataset of interactions, without collecting new experience during training.
+  details: The policy can propose actions the dataset rarely covers. This makes it important to understand how data coverage affects value estimates and the behavior of the learned policy.
+  question: How much does the final policy depend on the quality and coverage of the logged trajectories?

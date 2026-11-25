@@ -1,11 +1,13 @@
 ---
-layout: home
+layout: page
 title: Blog
 permalink: /blog/
-author_profile: true
 ---
 
-Welcome to my blog! Here I share thoughts, tutorials, and experiences about robotics, AI, and programming.
-
-🛠️ Under Construction - Work in progress.
-<!-- Jekyll automatically lists all posts from _posts/ folder below -->
+{% if site.posts.size > 0 %}
+{% for post in site.posts %}
+- [{{ post.title }}]({{ post.url | relative_url }})
+{% endfor %}
+{% else %}
+Read my [project write-ups]({{ '/projects/' | relative_url }}) for notes on implementation, evaluation, and debugging.
+{% endif %}

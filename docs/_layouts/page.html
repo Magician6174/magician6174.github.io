@@ -1,0 +1,12 @@
+---
+layout: base
+---
+<div class="wrap page-shell">
+  <header class="page-head">
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.description %}<p>{{ page.description | escape }}</p>{% endif %}
+  </header>
+  <div class="{% if page.wide %}page-content{% else %}prose{% endif %}">
+    {{ content }}
+  </div>
+</div>

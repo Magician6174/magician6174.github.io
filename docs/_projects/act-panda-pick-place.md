@@ -12,13 +12,16 @@ tags:
 # Drop a rollout GIF at assets/images/act-rollout.gif and uncomment to add a card thumbnail
 # header:
 #   teaser: /assets/images/act-rollout.gif
-# Code release pending
-# links:
-#   - url: https://github.com/magician6174/panda-act
-#     label: "Source"
-toc: true
-toc_sticky: true
+category: "Robot learning"
+featured_title: "Action Chunking Transformer"
+featured_summary: "A CVAE and transformer policy for Franka Panda pick-and-place, trained on RGB-D teleoperation demonstrations."
+repository: https://github.com/Magician6174/ACT
 ---
+
+**On this page**
+
+* Contents
+{:toc}
 
 ## Overview
 

@@ -11,8 +11,12 @@ tags:
   - Algorithms
 # header:
 #   teaser: /assets/images/cpp-nd.jpg
-toc: true
 ---
+
+**On this page**
+
+* Contents
+{:toc}
 
 ## Programme
 
