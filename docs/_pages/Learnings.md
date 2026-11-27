@@ -70,6 +70,10 @@ Advanced technical courses with an emphasis on theoretical foundations and probl
 - Deep Learning
 - Mathematics for Machine Learning
 
+## Computer-Aided Design
+
+- **Onshape CAD coursework** — completed.
+
 ## Ongoing Self-Directed Work
 
 Alongside formal coursework, my current focus is hands-on robot learning: implementing
