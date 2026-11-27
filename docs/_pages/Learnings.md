@@ -72,7 +72,11 @@ Advanced technical courses with an emphasis on theoretical foundations and probl
 
 ## Computer-Aided Design
 
-- **Onshape CAD coursework** — completed.
+**Onshape by PTC**
+
+- Introduction to Part Studios (issued November 2026)
+- Introduction to Sketching (issued November 2025)
+- Introduction to Parametric Feature-Based CAD (issued November 2025)
 
 ## Ongoing Self-Directed Work
 
