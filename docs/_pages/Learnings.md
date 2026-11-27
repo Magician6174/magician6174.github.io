@@ -78,6 +78,15 @@ Advanced technical courses with an emphasis on theoretical foundations and probl
 - Introduction to Sketching (issued November 2025)
 - Introduction to Parametric Feature-Based CAD (issued November 2025)
 
+## Stanford CME 295 · Transformers and Large Language Models
+
+Completed through independent study. Topics included Transformer architectures,
+attention and positional encodings, LLM training and fine-tuning, efficient
+inference, and model evaluation.
+
+- [Stanford syllabus and lecture materials](https://cme295.stanford.edu/syllabus/)
+- Public practice materials from Fall 2025: [midterm exam](https://cme295.stanford.edu/exams/midterm.pdf) and [final exam with solutions](https://cme295.stanford.edu/exams/final-solutions.pdf).
+
 ## Ongoing Self-Directed Work
 
 Alongside formal coursework, my current focus is hands-on robot learning: implementing
