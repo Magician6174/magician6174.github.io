@@ -78,7 +78,18 @@ Advanced technical courses with an emphasis on theoretical foundations and probl
 - Introduction to Sketching (issued November 2025)
 - Introduction to Parametric Feature-Based CAD (issued November 2025)
 
-## Stanford CME 295 · Transformers and Large Language Models
+## Stanford Courses
+
+### Stanford CS224R · Deep Reinforcement Learning
+
+Independent study covering imitation learning, online reinforcement learning
+for simulated robot control, and offline reinforcement learning from fixed datasets.
+
+- [Stanford course materials](https://cs224r.stanford.edu/)
+- [Homework write-up]({{ '/projects/cs224r/' | relative_url }}){% for homework in site.data.cs224r %}
+  - [{{ homework.number }} · {{ homework.title }}]({{ '/projects/cs224r/' | relative_url }}#{{ homework.id }}) — {{ homework.status }}{% endfor %}
+
+### Stanford CME 295 · Transformers and Large Language Models
 
 Completed through independent study. Topics included Transformer architectures,
 attention and positional encodings, LLM training and fine-tuning, efficient
@@ -97,5 +108,3 @@ building the simulation, teleoperation and data-collection infrastructure they d
 - [Diffusion Policy from Scratch]({{ '/projects/diffusion-policy-panda/' | relative_url }})
 - [7-DOF Teleoperation, Inverse Kinematics and Contact Physics]({{ '/projects/panda-teleop-ik/' | relative_url }})
 - [QP Differential IK for an Under-Actuated 5-DOF Arm]({{ '/projects/so101-teleop-ik/' | relative_url }})
-
-- [Stanford CS224R homework projects]({{ '/projects/cs224r/' | relative_url }}) on imitation learning, online RL, and offline RL.
