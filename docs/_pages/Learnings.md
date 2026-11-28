@@ -74,9 +74,9 @@ Advanced technical courses with an emphasis on theoretical foundations and probl
 
 **Onshape by PTC**
 
-- Introduction to Part Studios (issued November 2026)
-- Introduction to Sketching (issued November 2025)
-- Introduction to Parametric Feature-Based CAD (issued November 2025)
+- [Introduction to Part Studios](https://learn.onshape.com/c/s/M132hz_wyv4uXE73-3UU_uSNFaUN2D40rJ3RJunLDi1FVnvQiJc6ygRYOti3JZrO) (issued November 2026)
+- [Introduction to Sketching](https://learn.onshape.com/c/s/tvQdadPpU1J5R-Xho48az0DS8EkrdtaDdEM97XhoOBAC24zeGo6TWLAI396tuRMN) (issued November 2025)
+- [Introduction to Parametric Feature-Based CAD](https://learn.onshape.com/c/s/YaTkyZ9uDlGB0pZMvB-mN6b00o70MPhW_LuncpA7w1GF90OCjycmkvf9CE8cGlqJ) (issued November 2025)
 
 ## Stanford Courses
 
