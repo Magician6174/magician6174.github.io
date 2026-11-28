@@ -98,11 +98,21 @@ over space, and correlation structure across both spatial and temporal dimension
 
 ## IDS.S24x — Learning Time Series with Interventions
 
-Graduate-level time series along three lines: learning the **structured stochastic dynamic
-model** generating the series, **prediction** under that model, and **reinforcement learning**
-where actions intervene on the process. The interventional framing is what distinguishes it
-from standard forecasting — the question is not only what will happen, but what happens if you
-act.
+<span id="learning-time-series-with-interventions"></span>
+
+This course covers how to model a time series, estimate what would have happened without an intervention, and choose actions that change the system over time.
+
+### Structured forecasting
+
+Decompose a series into trend, seasonality, and a stationary component. The course uses ARMA models for stationary dynamics and SARIMAX to handle differencing, seasonal effects, and external predictors. The Box–Jenkins workflow uses frequency analysis and autocorrelation diagnostics to guide model selection. Time-series cross-validation provides a way to compare candidate models.
+
+### Low-rank forecasting and counterfactuals
+
+Rearrange observations into Page or Hankel matrices to reveal low-rank structure. SAMoSSA combines low-rank modelling across multiple series with autoregressive noise to fill missing observations and forecast future values. Synthetic control uses comparison series to estimate how an observed series might have evolved without an intervention.
+
+### Control and reinforcement learning
+
+Treat interventions as actions that change the system. Dynamic programming plans when the dynamics are known. Tabular Q-learning estimates action values from experience, and deep Q-learning uses a neural network to approximate those values in larger state spaces.
 
 ## Status
 

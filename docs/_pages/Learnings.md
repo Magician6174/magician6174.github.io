@@ -27,7 +27,7 @@ the foundations of machine learning.
 - Fundamentals of Statistics
 - Machine Learning with Python: From Linear Models to Deep Learning
 - Data Analysis: Statistical Modeling and Computation in Applications
-- Learning Time Series with Interventions
+- [Learning Time Series with Interventions (IDS.S24x)]({{ '/projects/mitx-statistics-data-science/#learning-time-series-with-interventions' | relative_url }}) — seasonal forecasting, low-rank methods for missing data, counterfactual estimation, and reinforcement learning
 
 Status: coursework completed, **final capstone exam pending**.
 
