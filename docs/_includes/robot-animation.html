@@ -1,0 +1,11 @@
+<figure class="robot-panel" data-robot-demo>
+  <div class="robot-stage">
+    <img class="robot-fallback" src="{{ '/assets/images/panda-topdown.webp' | relative_url }}" width="640" height="480" alt="Overhead view of the Franka Panda arm in MuJoCo">
+    <canvas width="640" height="440" role="img" aria-label="Illustration of a robot arm picking up a block and placing it on a second pad" hidden></canvas>
+  </div>
+  <figcaption class="robot-caption" hidden>
+    <span><span class="accent-square" aria-hidden="true"></span> Pick and place</span>
+    <button class="robot-toggle" type="button">Pause animation</button>
+  </figcaption>
+</figure>
+<script defer src="{{ '/assets/js/robot-animation.js' | relative_url }}"></script>
