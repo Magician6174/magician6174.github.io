@@ -70,6 +70,15 @@ Advanced technical courses with an emphasis on theoretical foundations and probl
 - Deep Learning
 - Mathematics for Machine Learning
 
+## Kaggle Learn
+
+- [Pandas](https://www.kaggle.com/learn/certification/nofullnamedisplayed/pandas)
+- [Data Visualization](https://www.kaggle.com/learn/certification/nofullnamedisplayed/data-visualization)
+- [Feature Engineering](https://www.kaggle.com/learn/certification/nofullnamedisplayed/feature-engineering)
+- [Intro to SQL](https://www.kaggle.com/learn/certification/nofullnamedisplayed/intro-to-sql)
+
+[View my Kaggle profile](https://www.kaggle.com/nofullnamedisplayed).
+
 ## Computer-Aided Design
 
 **Onshape by PTC**
