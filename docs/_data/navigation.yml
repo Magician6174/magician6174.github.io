@@ -1,6 +1,8 @@
 main:
   - title: Projects
     url: /projects/
+  - title: Learning
+    url: /learnings/
   - title: About
     url: /about/
   - title: Résumé
