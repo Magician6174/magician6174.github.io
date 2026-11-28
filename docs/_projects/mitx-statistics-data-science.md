@@ -112,7 +112,11 @@ Rearrange observations into Page or Hankel matrices to reveal low-rank structure
 
 ### Control and reinforcement learning
 
-Treat interventions as actions that change the system. Dynamic programming plans when the dynamics are known. Tabular Q-learning estimates action values from experience, and deep Q-learning uses a neural network to approximate those values in larger state spaces.
+Module 3 introduced the **linear quadratic regulator (LQR)**, which computes state feedback for linear dynamics by balancing state deviation against control effort. The module also covered dynamic programming for planning with known dynamics, tabular Q-learning for learning action values from experience, and deep Q-learning for larger state spaces.
+
+### Module 3 project — Q-learning for a linear dynamical system
+
+I implemented a feature-based Q-learning controller, used ε-greedy exploration during training, and evaluated the learned greedy policy over a 100-step rollout with perturbed dynamics. This let me test how a policy learned on the original system behaved when the system dynamics changed.
 
 ## Status
 
