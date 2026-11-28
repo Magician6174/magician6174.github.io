@@ -160,7 +160,7 @@
     };
   }
 
-  function draw() {
+  function drawTransfer() {
     const time = elapsed % duration;
     const reverse = Math.floor(elapsed / duration) % 2 === 1;
     const from = reverse ? targetPad : sourcePad;
@@ -177,7 +177,6 @@
       y: interpolate(start.y, end.y) - 4 * transferRise * travel * (1 - travel),
     };
     const grip = interpolate(start.grip, end.grip);
-    const elbow = calculateElbow(wrist);
     const carrying = time >= keyframes[2].time && time < keyframes[5].time;
 
     paintStation();
@@ -191,11 +190,7 @@
     context.stroke();
     context.restore();
 
-    drawLink(shoulder, elbow, 46);
-    drawLink(elbow, wrist, 34);
-    drawJoint(shoulder, 30);
-    drawJoint(elbow, 24);
-    drawJoint(wrist, 16);
+    drawArm(wrist);
     drawBlock(carrying ? wrist.x : time < keyframes[2].time ? from : to, carrying ? wrist.y + 24 : blockHeight);
     roundedBox(wrist.x - 19, wrist.y + 7, 38, 11, 3, '#819bac', '#bbced4');
     for (const side of [-1, 1]) {
@@ -205,8 +200,118 @@
     }
   }
 
+  function drawArm(wrist) {
+    const elbow = calculateElbow(wrist);
+    drawLink(shoulder, elbow, 46);
+    drawLink(elbow, wrist, 34);
+    drawJoint(shoulder, 30);
+    drawJoint(elbow, 24);
+    drawJoint(wrist, 16);
+  }
+
+  // The pen and its visible ink use the same continuous figure-eight trajectory.
+  function penPoint(t) {
+    return { x: 410 + 87 * Math.sin(t), y: 280 + 41 * Math.sin(2 * t) };
+  }
+
+  function drawPlotter(progress) {
+    paintStation();
+    roundedBox(300, 218, 220, 121, 6, '#142432', '#708b99');
+    const angle = progress * 2 * Math.PI;
+    context.beginPath();
+    for (let i = 0; i <= 160; i++) {
+      const point = penPoint(angle * i / 160);
+      if (i === 0) context.moveTo(point.x, point.y);
+      else context.lineTo(point.x, point.y);
+    }
+    context.strokeStyle = '#7cf4e3';
+    context.lineWidth = 3;
+    context.stroke();
+    const tip = penPoint(angle);
+    const wrist = { x: tip.x, y: tip.y - 30 };
+    drawArm(wrist);
+    roundedBox(tip.x - 5, wrist.y + 9, 10, 15, 2, '#cfdee4');
+    polygon([[tip.x - 5, tip.y - 7], [tip.x + 5, tip.y - 7], [tip.x, tip.y]], '#7cf4e3');
+  }
+
+  function drawRover(progress) {
+    context.fillStyle = '#10222e';
+    context.fillRect(0, 0, sceneWidth, sceneHeight);
+    for (let x = 0; x < sceneWidth; x += 32) line({x, y: 0}, {x, y: sceneHeight}, '#25404b');
+    for (let y = 0; y < sceneHeight; y += 32) line({x: 0, y}, {x: sceneWidth, y}, '#25404b');
+
+    const obstacles = [[298, 193, 49], [496, 105, 28], [102, 310, 39], [425, 339, 24]];
+    for (const [x, y, r] of obstacles) {
+      disk(x, y, r, '#304b59', '#738e9a');
+      disk(x, y, r - 6, '#253d4a');
+    }
+    context.beginPath();
+    context.ellipse(320, 220, 195, 107, 0, 0, 2 * Math.PI);
+    context.setLineDash([3, 9]);
+    context.strokeStyle = '#84bba1';
+    context.stroke();
+    context.setLineDash([]);
+    const t = progress * 2 * Math.PI;
+    const x = 320 + 195 * Math.cos(t);
+    const y = 220 + 107 * Math.sin(t);
+    const heading = Math.atan2(107 * Math.cos(t), -195 * Math.sin(t));
+    for (let i = 0; i < 36; i++) {
+      const angle = t * 3 + i * Math.PI / 18;
+      const dx = Math.cos(angle), dy = Math.sin(angle);
+      let range = 118;
+      for (const [cx, cy, radius] of obstacles) {
+        const along = (cx - x) * dx + (cy - y) * dy;
+        const across = (cx - x) * dy - (cy - y) * dx;
+        if (along > 0 && Math.abs(across) < radius) {
+          range = Math.min(range, along - Math.sqrt(radius ** 2 - across ** 2));
+        }
+      }
+      const hit = { x: x + range * dx, y: y + range * dy };
+      line({x, y}, hit, range < 118 ? '#68dbbd88' : '#63ccb635');
+      if (range < 118) disk(hit.x, hit.y, 2.5, '#acf2bc');
+    }
+    context.save();
+    context.translate(x, y);
+    context.rotate(heading);
+    for (const side of [-1, 1]) roundedBox(-17, side * 17 - 3, 32, 7, 2, '#09111a', '#8ea6b2');
+    roundedBox(-21, -14, 44, 28, 7, '#b5cbd1', '#e7efef');
+    disk(-3, 0, 10, '#203847', '#819ca7');
+    disk(-3, 0, 4, '#b7ee8c');
+    line({x: 17, y: -7}, {x: 17, y: 7}, '#214352', 3);
+    context.restore();
+  }
+
+  const scenes = [
+    ['Pick and place', 'A robot arm transfers a block between two pads.', duration, drawTransfer],
+    ['Pen plotting', 'A robot arm draws a figure eight with a pen.', 6500, drawPlotter],
+    ['LiDAR navigation', 'A mobile robot follows a loop while range sensors detect nearby obstacles.', 8500, drawRover],
+  ];
+  let scene = 0;
+  const label = caption.querySelector('span');
+  const next = document.createElement('button');
+  next.type = 'button';
+  next.className = toggle.className;
+  next.textContent = 'Next task';
+  caption.style.flexWrap = 'wrap';
+  caption.insertBefore(next, toggle);
+
+  function selectScene(index) {
+    scene = index;
+    elapsed = 0;
+    label.lastChild.textContent = ' ' + scenes[scene][0];
+    canvas.setAttribute('aria-label', scenes[scene][1]);
+    draw();
+  }
+
+  function draw() {
+    scenes[scene][3](elapsed / scenes[scene][2]);
+  }
+
+  next.addEventListener('click', () => selectScene((scene + 1) % scenes.length));
+
   function tick(now) {
     if (previousTime !== undefined) elapsed += Math.min(now - previousTime, 50);
+    if (elapsed >= scenes[scene][2]) selectScene((scene + 1) % scenes.length);
     previousTime = now;
     draw();
     request = requestAnimationFrame(tick);
